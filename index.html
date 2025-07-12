@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Driven or Drained?</title>
+        <link rel="stylesheet" href="Style.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+    <ol>
+    <form id="surveyForm" method="post">
+      <header>
+        <h1>Driven or Drained?</h1> 
+      </header>
+      <section>  
+      <p>Welcome to the Driven or Drained; A short survey to check if you are driven by your 
+          academics or you are drained by the workload.</p>  
+        <p>So below are a few questions for the survey that we want you to answer, but answer 
+          honestly, as neither your name nor any other private data will be asked nor will be 
+          shared publicly.</p>
+          <p>So let’s begin!</p>
+      </section>
+      <header>
+        <h2>Section 1: Demographics</h2>
+      </header> 
+      <section>
+        <div>
+        <li data-question="grade_level">What is your grade level?</li>
+        </div>
+          <input type="text" name="grade_level" width="200">
+        <br>
+        <div>
+        <li data-question="high_performing">Do you consider yourself a high performing student?</li>
+        </div>
+          <input type="radio" name="high_performing" value="Yes"> Yes<br>
+          <input type="radio" name="high_performing" value="No"> No<br>
+          <input type="radio" name="high_performing" value="Not sure"> Not sure<br>
+        <br>
+        <div>
+        <li data-question="average_grade">What is your average grade in school?</li>
+        </div>
+          <input type="radio" name="average_grade" value="A/A*"> A/A*<br>
+          <input type="radio" name="average_grade" value="B"> B<br>
+          <input type="radio" name="average_grade" value="C or below"> C or below<br>
+        <br>  
+      </section>
+      <!-- Section 2 -->
+      <header> 
+        <h2>Section 2: Academic Pressure</h2>
+      </header>
+      <section>
+        <div>
+        <li data-question="study_hours">How many hours do you study per day (outside of school)?</li>
+        </div>
+          <input type="radio" name="study_hours" value="1 hour"> <1 hour<br>
+          <input type="radio" name="study_hours" value="1-2 hours"> 1-2 hours<br>
+          <input type="radio" name="study_hours" value="2-4 hours"> 2-4 hours<br>
+          <input type="radio" name="study_hours" value="4+ hours"> 4+ hours<br>
+        <br>
+        <div>
+        <li data-question="pressure_level">On a scale of 1-5, how often do you feel pressure to perform well in school?</li>
+        </div>
+        <table>
+          <tr>
+            <th></th>
+            <th>1<br>(Never)</th>
+            <th>2<br>(Rarely)</th>
+            <th>3<br>(Sometimes)</th>
+            <th>4<br>(Often)</th>
+            <th>5<br>(Always)</th>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="radio" name="pressure_level" value="Never"></td>
+            <td><input type="radio" name="pressure_level" value="Rarely"></td>
+            <td><input type="radio" name="pressure_level" value="Sometimes"></td>
+            <td><input type="radio" name="pressure_level" value="Often"></td>
+            <td><input type="radio" name="pressure_level" value="Always"></td>
+          </tr>
+        </table>
+        <br>
+        <div>
+        <li data-question="pressure_source">Who do you feel the most academic pressure from?</li>
+        </div>
+        <em>*Check all that apply*</em>
+        <br>
+          <input type="checkbox" name="pressure_source" value="Yourself"> Yourself<br>
+          <input type="checkbox" name="pressure_source" value="Parents"> Parents<br>
+          <input type="checkbox" name="pressure_source" value="Teachers"> Teachers<br>
+          <input type="checkbox" name="pressure_source" value="Friends/Classmates"> Friends/Classmates<br>
+          <input type="checkbox" name="pressure_source" value="Society in general"> Society in general<br>
+        <br>
+        <div>
+        <li data-question="perfection">How often do you feel the need to be perfect in schoolwork?</li>
+        </div>
+        <table>
+            <tr>
+              <th></th>
+              <th>1<br>(Never)</th>
+              <th>2<br>(Rarely)</th>
+              <th>3<br>(Sometimes)</th>
+              <th>4<br>(Often)</th>
+              <th>5<br>(Always)</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="radio" name="perfection" value="Never"></td>
+              <td><input type="radio" name="perfection" value="Rarely"></td>
+              <td><input type="radio" name="perfection" value="Sometimes"></td>
+              <td><input type="radio" name="perfection" value="Often"></td>
+              <td><input type="radio" name="perfection" value="Always"></td>
+            </tr>
+          </table>
+        </section>
+    <!-- Section 3 -->
+        <header>
+          <h2>Section 3: Mental Health & Stress</h2>
+        </header>
+        <section>
+        <div>
+           <li data-question="overwhelmed">How often do you feel overwhelmed or anxious about school?</li>
+        </div>
+           <table>
+            <tr>
+              <th></th>
+              <th>1<br>(Never)</th>
+              <th>2<br>(Rarely)</th>
+              <th>3<br>(Sometimes)</th>
+              <th>4<br>(Often)</th>
+              <th>5<br>(Always)</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="radio" name="overwhelmed" value="Never"></td>
+              <td><input type="radio" name="overwhelmed" value="Rarely"></td>
+              <td><input type="radio" name="overwhelmed" value="Sometimes"></td>
+              <td><input type="radio" name="overwhelmed" value="Often"></td>
+              <td><input type="radio" name="overwhelmed" value="Always"></td>
+            </tr>
+          </table> 
+          <br> 
+        <div>
+          <li data-question="burnout">Have you ever experienced burnout (mental exhaustion, low motivation, or fatigue due to school)?</li> 
+        </div>
+            <input type="radio" name="burnout" value="Yes"> Yes<br>
+            <input type="radio" name="burnout" value="No"> No<br>
+            <input type="radio" name="burnout" value="Not sure"> Not sure<br>
+          <br>
+        <div>
+          <li data-question="mhealth">How would you describe your current mental health?</li>
+        </div>
+          <table>
+            <tr>
+              <th></th>
+              <th>1<br>(Very Good)</th>
+              <th>2<br>(Good)</th>
+              <th>3<br>(Average)</th>
+              <th>4<br>(Poor)</th>
+              <th>5<br>(Very Poor)</th>
+            </tr>
+            <tr>
+              <td></td>
+              <td><input type="radio" name="mhealth" value="Very Good"></td>
+              <td><input type="radio" name="mhealth" value="Good"></td>
+              <td><input type="radio" name="mhealth" value="Average"></td>
+              <td><input type="radio" name="mhealth" value="Poor"></td>
+              <td><input type="radio" name="mhealth" value="very Poor"></td>
+            </tr>
+          </table> 
+          </section>
+          <br>
+        <!-- Section 4 -->  
+         <header>
+          <h2>Section 4: Motivation & Coping</h2>
+          </header>
+          <section>
+          <br>
+          <div>
+          <li data-question="motivation">What motivates you the most to perform well academically?</li>
+          </div>
+          <em>*Check all that apply*</em>
+          <br>
+            <input type="checkbox" name="motivation" value="Fear of Failure"> Fear of failure<br>
+            <input type="checkbox" name="motivation" value="Passion for Learning"> Passion for learning<br>
+            <input type="checkbox" name="motivation" value="External Pressure"> External pressure (parents/teachers)<br>
+            <input type="checkbox" name="motivation" value="Rewards or Future Opportunities"> Rewards or future opportunities<br>
+            <input type="checkbox" name="motivation" value="Competition with Others"> Competition with others<br>
+          <br>
+          <div>
+          <li>How often do you use the following to manage stress?</li>
+          </div>
+          <ul>
+           <li data-question="ex">Exercise:</li>
+           <table>
+             <tr>
+               <th></th>
+               <th>1<br>(Never)</th>
+               <th>2<br>(Rarely)</th>
+               <th>3<br>(Sometimes)</th>
+               <th>4<br>(Often)</th>
+               <th>5<br>(Always)</th>
+             </tr>
+             <tr>
+               <td></td>
+               <td><input type="radio" name="ex" value="Never"></td>
+               <td><input type="radio" name="ex" value="Rarely"></td>
+               <td><input type="radio" name="ex" value="Sometimes"></td>
+               <td><input type="radio" name="ex" value="Often"></td>
+               <td><input type="radio" name="ex" value="Always"></td>
+             </tr>
+           </table>
+           <br>
+           <li data-question="ff">Talking to friends/family:</li>
+           <table>
+             <tr>
+               <th></th>
+               <th>1<br>(Never)</th>
+               <th>2<br>(Rarely)</th>
+               <th>3<br>(Sometimes)</th>
+               <th>4<br>(Often)</th>
+               <th>5<br>(Always)</th>
+             </tr>
+             <tr>
+               <td></td>
+               <td><input type="radio" name="ff" value="Never"></td>
+               <td><input type="radio" name="ff" value="Rarely"></td>
+               <td><input type="radio" name="ff" value="Sometimes"></td>
+               <td><input type="radio" name="ff" value="Often"></td>
+               <td><input type="radio" name="ff" value="Always"></td>
+             </tr>
+           </table>
+           <br>
+           <li data-question="music">Listening to music:</li>
+           <table>
+             <tr>
+               <th></th>
+               <th>1<br>(Never)</th>
+               <th>2<br>(Rarely)</th>
+               <th>3<br>(Sometimes)</th>
+               <th>4<br>(Often)</th>
+               <th>5<br>(Always)</th>
+             </tr>
+             <tr>
+               <td></td>
+               <td><input type="radio" name="music" value="Never"></td>
+               <td><input type="radio" name="music" value="Rarely"></td>
+               <td><input type="radio" name="music" value="Sometimes"></td>
+               <td><input type="radio" name="music" value="Often"></td>
+               <td><input type="radio" name="music" value="Always"></td>
+             </tr>
+           </table>
+           <br>
+           <li data-question="sr">Sleeping/resting:</li>
+           <table>
+             <tr>
+               <th></th>
+               <th>1<br>(Never)</th>
+               <th>2<br>(Rarely)</th>
+               <th>3<br>(Sometimes)</th>
+               <th>4<br>(Often)</th>
+               <th>5<br>(Always)</th>
+             </tr>
+             <tr>
+               <td></td>
+               <td><input type="radio" name="sr" value="Never"></td>
+               <td><input type="radio" name="sr" value="Rarely"></td>
+               <td><input type="radio" name="sr" value="Sometimes"></td>
+               <td><input type="radio" name="sr" value="Often"></td>
+               <td><input type="radio" name="sr" value="Always"></td>
+             </tr>
+           </table>
+           <br>
+           <li data-question="p">Avoiding work (procrastination):</li>
+           <table>
+             <tr>
+               <th></th>
+               <th>1<br>(Never)</th>
+               <th>2<br>(Rarely)</th>
+               <th>3<br>(Sometimes)</th>
+               <th>4<br>(Often)</th>
+               <th>5<br>(Always)</th>
+             </tr>
+             <tr>
+               <td></td>
+               <td><input type="radio" name="p" value="Never"></td>
+               <td><input type="radio" name="p" value="Rarely"></td>
+               <td><input type="radio" name="p" value="Sometimes"></td>
+               <td><input type="radio" name="p" value="Often"></td>
+               <td><input type="radio" name="p" value="Always"></td>
+             </tr>
+           </table>
+           <br>
+           <li data-question="more">Studying more:</li>
+           <table>
+             <tr>
+               <th></th>
+               <th>1<br>(Never)</th>
+               <th>2<br>(Rarely)</th>
+               <th>3<br>(Sometimes)</th>
+               <th>4<br>(Often)</th>
+               <th>5<br>(Always)</th>
+             </tr>
+             <tr>
+               <td></td>
+               <td><input type="radio" name="more" value="Never"></td>
+               <td><input type="radio" name="more" value="Rarely"></td>
+               <td><input type="radio" name="more" value="Sometimes"></td>
+               <td><input type="radio" name="more" value="Often"></td>
+               <td><input type="radio" name="more" value="Always"></td>
+             </tr>
+           </table>
+          </ul>
+         <br>
+         <button type="submit">Submit Survey</button>
+            </section>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+const form = document.getElementById("surveyForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const requiredFields = [
+    "grade_level", "high_performing", "average_grade", "study_hours",
+    "pressure_level", "pressure_source", "perfection", "overwhelmed",
+    "burnout", "mhealth", "motivation", "ex", "ff", "music", "sr", "p", "more"
+  ];
+
+  let missingFields = [];
+
+  // Clear old highlights
+  document.querySelectorAll("li.error-highlight").forEach(li => {
+    li.classList.remove("error-highlight");
+  });
+
+  requiredFields.forEach(name => {
+    const inputs = form.querySelectorAll(`[name="${name}"]`);
+    let isAnswered = false;
+
+    if (inputs.length === 1 && inputs[0].type === "text") {
+      isAnswered = inputs[0].value.trim() !== "";
+    } else {
+      isAnswered = Array.from(inputs).some(input => input.checked);
+    }
+
+    if (!isAnswered) {
+      missingFields.push(name);
+
+      const li = form.querySelector(`li[data-question="${name}"]`);
+      if (li) li.classList.add("error-highlight");
+    }
+  });
+
+  if (missingFields.length > 0) {
+    const firstError = form.querySelector(".error-highlight");
+    if (firstError) firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops!',
+      text: 'Please answer all required questions (highlighted in green).'
+    });
+
+    return;
+  }
+  const formData = new FormData(form);
+  const data = new URLSearchParams(formData);
+
+  fetch("https://script.google.com/macros/s/AKfycbzdNKUocyfFr_DSPAve95oTJjSUCX44CTjfg_wbkdXwkRHkO4RJGyP2i3if1Q3HUJL6/exec", {
+    method: "POST",
+    body: data
+  })
+  .then(response => response.text())
+  .then(result => {
+    Swal.fire({
+      icon: 'success',
+      title: 'Submitted!',
+      text: '🎉 Thank you for submitting the survey! Your responses have been recorded.'
+    });
+    form.reset();
+  })
+  .catch(error => {
+    Swal.fire({
+      icon: 'error',
+      title: 'Error',
+      text: 'There was a problem submitting the form.'
+    });
+    console.error(error);
+  });
+});
+</script>
+  </form>
+     </ol>
+    </body>
+</html>
