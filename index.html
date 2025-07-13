@@ -387,9 +387,21 @@
           text: "🎉 Thank you for submitting the survey! Your responses have been recorded.",
         }).then(() => {
           // Clear the screen after user clicks "OK"
-          document.body.innerHTML = '<h1 style="text-align:center;margin-top:50px;">Thank you for your time!</h1>';
+          document.body.innerHTML = `
+  <div style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 2em;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+  ">
+    Thank you for your time!
+  </div>
+`;
         });
-
         form.reset();
       })
       .catch((error) => {
