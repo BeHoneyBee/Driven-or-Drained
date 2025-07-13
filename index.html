@@ -321,87 +321,86 @@
     </div>
 
     <script>
-      const form = document.getElementById("surveyForm");
+  const form = document.getElementById("surveyForm");
 
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        const requiredFields = [
-          "grade_level", "high_performing", "average_grade", "study_hours",
-          "pressure_level", "pressure_source", "perfection", "overwhelmed",
-          "burnout", "mhealth", "motivation", "ex", "ff", "music", "sr", "p", "more"
-        ];
+    const requiredFields = [
+      "grade_level", "high_performing", "average_grade", "study_hours",
+      "pressure_level", "pressure_source", "perfection", "overwhelmed",
+      "burnout", "mhealth", "motivation", "ex", "ff", "music", "sr", "p", "more"
+    ];
 
-        let missingFields = [];
+    let missingFields = [];
 
-        document.querySelectorAll("li.error-highlight").forEach((li) => {
-          li.classList.remove("error-highlight");
-        });
+    document.querySelectorAll("li.error-highlight").forEach((li) => {
+      li.classList.remove("error-highlight");
+    });
 
-        requiredFields.forEach((name) => {
-          const inputs = form.querySelectorAll(`[name="${name}"]`);
-          let isAnswered = false;
+    requiredFields.forEach((name) => {
+      const inputs = form.querySelectorAll(`[name="${name}"]`);
+      let isAnswered = false;
 
-          if (inputs.length === 1 && inputs[0].type === "text") {
-            isAnswered = inputs[0].value.trim() !== "";
-          } else {
-            isAnswered = Array.from(inputs).some((input) => input.checked);
-          }
+      if (inputs.length === 1 && inputs[0].type === "text") {
+        isAnswered = inputs[0].value.trim() !== "";
+      } else {
+        isAnswered = Array.from(inputs).some((input) => input.checked);
+      }
 
-          if (!isAnswered) {
-            missingFields.push(name);
-            const li = form.querySelector(`li[data-question="${name}"]`);
-            if (li) li.classList.add("error-highlight");
-          }
-        });
+      if (!isAnswered) {
+        missingFields.push(name);
+        const li = form.querySelector(`li[data-question="${name}"]`);
+        if (li) li.classList.add("error-highlight");
+      }
+    });
 
-        if (missingFields.length > 0) {
-          const firstError = form.querySelector(".error-highlight");
-          if (firstError)
-            firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (missingFields.length > 0) {
+      const firstError = form.querySelector(".error-highlight");
+      if (firstError)
+        firstError.scrollIntoView({ behavior: "smooth", block: "center" });
 
-          Swal.fire({
-            icon: "warning",
-            title: "Oops!",
-            text: "Please answer all required questions (underlined in green).",
-          });
-
-          return;
-        }
-
-        const formData = new FormData(form);
-        const data = new URLSearchParams(formData);
-
-        fetch(
-          "https://script.google.com/macros/s/AKfycbzdNKUocyfFr_DSPAve95oTJjSUCX44CTjfg_wbkdXwkRHkO4RJGyP2i3if1Q3HUJL6/exec",
-          {
-            method: "POST",
-            body: data,
-          }
-        )
-          .then((response) => response.text())
-          ..then((result) => {
-  Swal.fire({
-    icon: "success",
-    title: "Submitted!",
-    text: "🎉 Thank you for submitting the survey! Your responses have been recorded.",
-  }).then(() => {
-    // Clear the screen after user clicks "OK"
-    document.body.innerHTML = '<h1 style="text-align:center;margin-top:50px;">Thank you for your time!</h1>';
-  });
-
-  form.reset();
-})
-
-          .catch((error) => {
-            Swal.fire({
-              icon: "error",
-              title: "Error",
-              text: "There was a problem submitting the form.",
-            });
-            console.error(error);
-          });
+      Swal.fire({
+        icon: "warning",
+        title: "Oops!",
+        text: "Please answer all required questions (underlined in green).",
       });
-    </script>
+
+      return;
+    }
+
+    const formData = new FormData(form);
+    const data = new URLSearchParams(formData);
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbzdNKUocyfFr_DSPAve95oTJjSUCX44CTjfg_wbkdXwkRHkO4RJGyP2i3if1Q3HUJL6/exec",
+      {
+        method: "POST",
+        body: data,
+      }
+    )
+      .then((response) => response.text())
+      .then((result) => {
+        Swal.fire({
+          icon: "success",
+          title: "Submitted!",
+          text: "🎉 Thank you for submitting the survey! Your responses have been recorded.",
+        }).then(() => {
+          // Clear the screen after user clicks "OK"
+          document.body.innerHTML = '<h1 style="text-align:center;margin-top:50px;">Thank you for your time!</h1>';
+        });
+
+        form.reset();
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "There was a problem submitting the form.",
+        });
+        console.error(error);
+      });
+  });
+</script>
   </body>
 </html>
