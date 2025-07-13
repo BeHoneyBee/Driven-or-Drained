@@ -179,4 +179,13 @@ div.custom-font {
     font-size: 18px;
   }
 }
+/* Align checkboxes and radio buttons with their labels */
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+  margin-right: 8px;
+  position: relative;
+  top: -1px;
+  transform: scale(1.2); /* Optional: makes buttons slightly larger */
+}
 
