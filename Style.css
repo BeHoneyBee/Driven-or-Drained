@@ -74,8 +74,42 @@ input[type="text"] {
   margin: 0.5rem 0;
 }
 
+/* Styled Radio Buttons and Checkboxes */
 input[type="radio"],
 input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin-right: 8px;
+  font: inherit;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6a9c1d;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked::before,
+input[type="checkbox"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  background-color: #6a9c1d;
+  border-radius: 50%;
+}
+
+input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:checked::before {
+  border-radius: 2px;
 }
 
 /* Submit Button */
@@ -100,6 +134,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 0.5rem;
+  overflow-x: auto;
 }
 
 th, td {
@@ -178,19 +213,3 @@ div.custom-font {
     font-size: 18px;
   }
 }
-/* Align checkboxes and radio buttons with their labels */
-input[type="checkbox"],
-input[type="radio"] {
-  vertical-align: middle;
-  margin-right: 8px;
-  position: relative;
-  top: -1px;
-  transform: scale(1.2); /* Optional: makes buttons slightly larger */
-}
-input[type="radio"],
-input[type="checkbox"] {
-  vertical-align: middle;
-  margin-right: 6px;
-  transform: translateY(1px); /* pushes input slightly down */
-}
-
