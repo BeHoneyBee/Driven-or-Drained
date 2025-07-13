@@ -380,14 +380,19 @@
           }
         )
           .then((response) => response.text())
-          .then((result) => {
-            Swal.fire({
-              icon: "success",
-              title: "Submitted!",
-              text: "🎉 Thank you for submitting the survey! Your responses have been recorded.",
-            });
-            form.reset();
-          })
+          ..then((result) => {
+  Swal.fire({
+    icon: "success",
+    title: "Submitted!",
+    text: "🎉 Thank you for submitting the survey! Your responses have been recorded.",
+  }).then(() => {
+    // Clear the screen after user clicks "OK"
+    document.body.innerHTML = '<h1 style="text-align:center;margin-top:50px;">Thank you for your time!</h1>';
+  });
+
+  form.reset();
+})
+
           .catch((error) => {
             Swal.fire({
               icon: "error",
