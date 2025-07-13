@@ -93,3 +93,20 @@ div.custom-font {
   text-decoration-color: #6a9c1d;
   text-decoration-thickness: 2px;
 }
+body {
+  padding: 1rem;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  box-sizing: border-box;
+}
+
+section, header {
+  max-width: 800px;
+  margin: auto;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
