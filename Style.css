@@ -110,3 +110,31 @@ section, header {
   background-color: #fff;
   border-radius: 8px;
 }
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  section, header {
+    padding: 0.8rem;
+    margin: 0.5rem;
+  }
+
+  input, textarea, select, button {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
+
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+}
+li {
+  list-style-position: inside;
+  padding-bottom: 0.5rem;
+  word-wrap: break-word;
+}
