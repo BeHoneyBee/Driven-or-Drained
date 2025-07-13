@@ -215,3 +215,14 @@ label {
   font-size: 20px;
   margin-bottom: 0.5rem;
 }
+/* Start a counter for li elements inside sections */
+section {
+  counter-reset: question-counter;
+}
+
+section li[data-question]::before {
+  counter-increment: question-counter;
+  content: counter(question-counter) ". ";
+  font-weight: bold;
+  margin-right: 6px;
+}
